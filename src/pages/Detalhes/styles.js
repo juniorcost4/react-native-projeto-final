@@ -18,13 +18,20 @@ export const styles = StyleSheet.create({
     bt: {
         alignItems: 'center',
         backgroundColor: '#DDDDDD',
-        
-    
-      },
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor:'black',
+    },
 
     textoBt:{
         color: 'red',
         fontSize: 22,
-        fontStyle:'bold',
-    }
+        fontWeight: "bold",
+        resizeMode: 'contain'
+    },
+
+    textoQt: {
+        fontSize: 22,
+    },
+
   });
