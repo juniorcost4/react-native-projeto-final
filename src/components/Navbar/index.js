@@ -13,11 +13,6 @@ export default function Navbar() {
         <View style={styles.container}>
             <Ionicons name="search-outline" size={25} />
             <TextInput style={styles.input} placeholder="  Pesquisar" onChangeText={setItem} value={item}/>
-            <TouchableOpacity onPress={() => navigation.navigate("Detalhes")}>
-                <Text>
-                    <Ionicons name="earth" size={28} style={{marginLeft: 70}}/>
-                </Text>
-            </TouchableOpacity>
             <TouchableOpacity>
                 <Text>
                     <Ionicons name="cart" size={28} style={{marginLeft: 10}}/>

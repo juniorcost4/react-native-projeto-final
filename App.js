@@ -10,6 +10,16 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { ScrollView, SafeAreaView } from 'react-native';
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
+function Tabs() {
+  return (
+  <Tab.Navigator>
+    <Stack.Screen name="Tab" component={Home} options={{headerShown: false}} />
+    <Stack.Screen name="Detalhes" component={Detalhes} />
+  </Tab.Navigator>
+  );
+}
 export default function App() {  
   return (
     <>
@@ -17,12 +27,10 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Login" >
           <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
-          <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
+          <Stack.Screen name="Home" component={Tabs} options={{headerShown: false}}/>
           <Stack.Screen name="Detalhes" component={Detalhes} options={{headerShown: true}}/>
         </Stack.Navigator>
       </NavigationContainer>
     </> 
   );
 }
- 
-//Adicionar biblioteca => yarn ou npm add styled-components

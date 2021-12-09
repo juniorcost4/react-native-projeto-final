@@ -1,13 +1,16 @@
 import React from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import { Text, View, ScrollView, FlatList } from 'react-native';
 import { styles } from './styles'
 import Navbar from '../../components/Navbar';
 
+const data = [
+    ''
+]
 export default function Home() {
     return (
         <ScrollView style={styles.container}>
             <Navbar/>
-            <Text>Home</Text>
+            <FlatList horizontal />
         </ScrollView>
     );
 }
