@@ -10,7 +10,7 @@ import {
 import Header from "../../components/Header";
 
 
-function Login() {
+function Login({ navigation }) {
 
   return (
     <KeyboardView>
@@ -24,7 +24,7 @@ function Login() {
           placeholder="Senha"
           secureTextEntry
         />
-        <ButtonSubmit>
+        <ButtonSubmit onPress={() => navigation.navigate('Home')}>
           <TextButton>Entrar</TextButton>
         </ButtonSubmit>
       </Container>
