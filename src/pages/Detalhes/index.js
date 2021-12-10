@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { TextInput, View, Text, TouchableOpacity } from 'react-native';
-import { styles } from './styles'
+import { TextInput, View, Text, TouchableOpacity, Image } from 'react-native';
+import { styles } from './styles';
+import gato from '../../../assets/gatofeio.png';
 
 export default function Detalhes() {
 
@@ -14,31 +15,38 @@ export default function Detalhes() {
                  <Text style={styles.texto}>Detalhes do Produto</Text>
                 
                 
-                <View style={{alignSelf:'flex-end'}}>
+                <View style={{alignSelf:'center'}}>
 
+                <View style={styles.espacoFotoProduto}>
+                  <Text style={{alignSelf:'center', fontSize: 25, fontWeight: 'bold'}}>Gato Que Nem Parece Gato</Text>
+                  <Image source={gato} style={styles.img} resizeMode="contain" />
+                  <Text>Esse é um gato muito feio. De acordo com Joey de Friends,
+                    isso nem é um gato!!!!
+                  </Text>
+                </View>
 
-                  <View style={{flexDirection:'row'}}>
+                  <View style={{flexDirection:'row', alignSelf:'center'}}>
                     {/* BOTAO DE ADICIONAR QUANTIDADE AO CARRINHO*/}
                     <TouchableOpacity
                      style={styles.bt}
-                        onPress={mais}>
-                             <Text>      +     </Text>
+                        onPress={menos}>
+                             <Text>-</Text>
                     </TouchableOpacity>
 
                     <View>
-                 <Text style={styles.textoQt}>  Quantidade:   {count}</Text>
+                      <Text style={styles.textoQt}>Quantidade: {count}</Text>
                     </View> 
 
                  {/* BOTAO DE RETIRAR QUANTIDADE DO CARRINHO */}
                     <TouchableOpacity
                     style={styles.bt}
-                    onPress={menos}>
-                    <Text >     -       </Text>
+                    onPress={mais}>
+                      <Text>+</Text>
                     </TouchableOpacity>
                   </View>    
 
                     <TouchableOpacity
-                     style={styles.bt}>
+                     style={styles.btAdicionarCarrinho}>
                     <Text style={styles.textoBt}>Adicionar ao carrinho</Text>
                     </TouchableOpacity>
                 </View>
