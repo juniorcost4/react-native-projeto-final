@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, View, ScrollView, FlatList } from 'react-native';
 import { styles } from './styles'
 import Navbar from '../../components/Navbar';
@@ -47,6 +47,8 @@ export default function Home() {
     return (
         <ScrollView style={styles.container}>
             <Navbar/>
+            <View style={styles.containerFlatlist}>
+                <Text style={styles.text}>Produtos em destaque</Text>
             <FlatList 
                 horizontal
                 showsHorizontalScrollIndicator={false}
@@ -55,6 +57,7 @@ export default function Home() {
                     <Produto key={prod.id} produto={prod} foto={imageList[index]} />
                 ))}
             />
+            </View>
         </ScrollView>
     );
 }

@@ -8,7 +8,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { ScrollView, SafeAreaView } from 'react-native';
-
 import { Entypo, Feather } from '@expo/vector-icons';
 
 const Stack = createNativeStackNavigator();
