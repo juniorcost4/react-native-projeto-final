@@ -5,7 +5,8 @@ export const styles = StyleSheet.create({
         backgroundColor: '#45B39D',
         flexDirection: 'row',
         height: 70,
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'space-between'
     },
     input: {
         borderWidth: 1,
@@ -14,5 +15,6 @@ export const styles = StyleSheet.create({
         width: 200,
         height: 30,
         marginLeft: 10,
+        paddingLeft: 6
     }
 })

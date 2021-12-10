@@ -11,13 +11,17 @@ export default function Navbar() {
 
     return (
         <View style={styles.container}>
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <Ionicons name="search-outline" size={25} />
             <TextInput style={styles.input} placeholder="  Pesquisar" onChangeText={setItem} value={item}/>
+            </View>
+            <View>
             <TouchableOpacity>
                 <Text>
-                    <Ionicons name="cart" size={28} style={{marginLeft: 10}}/>
+                    <Ionicons name="cart" size={28} style={{marginRight: 8}}/>
                 </Text>
-            </TouchableOpacity>
+            </TouchableOpacity> 
+            </View>
         </View>
     );
 }
