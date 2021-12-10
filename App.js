@@ -9,14 +9,39 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { ScrollView, SafeAreaView } from 'react-native';
 
+import { Entypo, Feather } from '@expo/vector-icons';
+
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function Tabs() {
   return (
-  <Tab.Navigator>
-    <Stack.Screen name="Tab" component={Home} options={{headerShown: false}} />
-    <Stack.Screen name="Detalhes" component={Detalhes} />
+  <Tab.Navigator
+  tabBarOptions={{
+    activeTintColor: '#fff',
+    tabStyle: {
+      paddingBottom: 5,
+      paddingTop: 5,
+      backgroundColor: '#222',
+      borderTopColor: 'transparent',
+    }
+
+  }}
+  >
+    <Stack.Screen name="Tab" 
+    component={Home} 
+    options={{headerShown: false, tabBarIcon: ({size, color}) => (
+      <Entypo name="home" size={size} color={color} />
+    )
+  }} 
+    />
+    <Stack.Screen name="Detalhes" 
+    component={Detalhes}
+    options={{headerShown: false, tabBarIcon: ({size, color}) => (
+      <Entypo name="images" size={size} color={color} />
+    )
+  }}  
+    />
   </Tab.Navigator>
   );
 }
