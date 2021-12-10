@@ -41,6 +41,13 @@ function Tabs() {
     )
   }}  
     />
+     <Stack.Screen name="Logout" 
+    component={Login}
+    options={{headerShown: false, tabBarIcon: ({size, color}) => (
+      <Entypo name="log-out" size={size} color={color} />
+    )
+  }}  
+    />
   </Tab.Navigator>
   );
 }
@@ -51,6 +58,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Login" >
           <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
+          <Stack.Screen name="Logout" component={Login} options={{headerShown: false}}/>
           <Stack.Screen name="Home" component={Tabs} options={{headerShown: false}}/>
           <Stack.Screen name="Detalhes" component={Detalhes} options={{headerShown: true}}/>
         </Stack.Navigator>
