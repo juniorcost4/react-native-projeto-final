@@ -8,7 +8,7 @@ export default function Detalhes() {
     const [count, setCount] = useState(0);
     const mais = () => setCount(prevCount => prevCount + 1);
     const menos= () => setCount(prevCount => prevCount - 1);
-
+    
     return (
         <View style={{flex:1}}>
             <View style={styles.container}>
@@ -22,6 +22,7 @@ export default function Detalhes() {
                   <Image source={gato} style={styles.img} resizeMode="contain" />
                   <Text>Esse é um gato muito feio. De acordo com Joey de Friends,
                     isso nem é um gato!!!!
+                    (Tadin do gato)
                   </Text>
                 </View>
 
