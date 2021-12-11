@@ -24,7 +24,7 @@ function Login({ navigation }) {
           placeholder="Senha"
           secureTextEntry
         />
-        <ButtonSubmit onPress={() => navigation.navigate('Home')}>
+        <ButtonSubmit onPress={() => navigation.navigate('Tabs')}>
           <TextButton>Entrar</TextButton>
         </ButtonSubmit>
       </Container>

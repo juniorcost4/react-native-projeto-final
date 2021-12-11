@@ -14,6 +14,15 @@ import { Entypo, Feather } from '@expo/vector-icons';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
+function stackHome() {
+  return (
+  <Stack.Navigator>
+    <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
+    <Stack.Screen name="Detalhes" component={Detalhes} options={{headerShown: false}} />
+  </Stack.Navigator>
+  );
+}
+
 function Tabs() {
   return (
   <Tab.Navigator
@@ -28,37 +37,20 @@ function Tabs() {
 
   }}
   >
-    <Stack.Screen name="Tab" 
-    component={Home} 
+    <Tab.Screen name="Inicio"
+    component={stackHome} 
     options={{headerShown: false, tabBarIcon: ({size, color}) => (
       <Entypo name="home" size={size} color={color} />
     )
   }} 
     />
-    <Stack.Screen name="Detalhes" 
-    component={Detalhes}
-    options={{headerShown: false, tabBarIcon: ({size, color}) => (
-      <Entypo name="images" size={size} color={color} />
-    )
-  }}  
-    />
-     <Stack.Screen name="Logout" 
-    component={Login}
-    options={{headerShown: false, tabBarIcon: ({size, color}) => (
-      <Entypo name="log-out" size={size} color={color} />
-    )
-  }}  
-    />
-    <Stack.Screen name="Cart"
+    <Tab.Screen name="Cart"
     component={Cart}
     options = {{headerShown: false , tabBarIcon:({size , color}) => (
       <Entypo name="shopping-cart" size={size} color={color} />
     )
     }}
-       
-    
-
-/>
+  />
   </Tab.Navigator>
   );
 }
@@ -68,11 +60,8 @@ export default function App() {
     <SafeAreaView style={{backgroundColor: '#45B39D'}} />
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Login" >
-          <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
-          <Stack.Screen name="Logout" component={Login} options={{headerShown: false}}/>
-          <Stack.Screen name="Home" component={Tabs} options={{headerShown: false}}/>
-          <Stack.Screen name="Cart" component={Tabs} options={{headerShown: false}}/>
-          <Stack.Screen name="Detalhes" component={Detalhes} options={{headerShown: true}}/>
+          <Stack.Screen name="Login" component={Login} options={{headerShown: false}} />
+          <Stack.Screen name="Tabs" component={Tabs} options={{headerShown: false}} />
         </Stack.Navigator>
       </NavigationContainer>
     </> 

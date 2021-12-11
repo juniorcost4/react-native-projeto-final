@@ -3,7 +3,10 @@ import { TextInput, View, Text, TouchableOpacity, Image } from 'react-native';
 import { styles } from './styles';
 import gato from '../../../assets/gatofeio.png';
 
-export default function Detalhes() {
+export default function Detalhes({ route }) {
+
+  const { id } = route.params;
+  console.log('esse é o id',id)
 
     const [count, setCount] = useState(0);
     const mais = () => setCount(prevCount => prevCount + 1);
