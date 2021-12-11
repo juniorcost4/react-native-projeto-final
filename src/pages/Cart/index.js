@@ -4,7 +4,7 @@ import { TouchableOpacity } from "react-native-web";
 import { styles } from './styles';
 
 
-export default function Detalhes() {
+export default function Cart() {
 
 
     
@@ -30,7 +30,7 @@ export default function Detalhes() {
                 <Text style={styles.produtosTexto}> Valor total: </Text> <Text> -- </Text>
             </View> */}
 
-            <View style={styles.valorTotal}> TOTAL: </View>
+            <View style={styles.valorTotal}><Text>Total: </Text> </View>
             
             <View style={styles.valorTotal}> 
             <TouchableOpacity style={styles.btFinalizarPedido}>

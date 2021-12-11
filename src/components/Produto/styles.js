@@ -6,6 +6,9 @@ export const styles = StyleSheet.create({
         borderRadius: 10,
         marginRight: 10,
         textAlign: 'center',
+        padding: 10,
+        height: 'auto',
+        maxWidth: 200
 
     },
     container: {
@@ -27,5 +30,10 @@ export const styles = StyleSheet.create({
         borderRadius: 9,
         padding: 10,
         color: 'white'
+    },
+    img: {
+        height: 120, 
+        width: 120, 
+        alignSelf: 'center'
     }
 })

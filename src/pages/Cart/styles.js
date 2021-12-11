@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     produtosTexto: {
         alignContent:'flex-start',
         fontWeight:'bold',
-        fontSize:'15',
+        fontSize: 15,
     },
     gradeProduto:{
         backgroundColor: '#e6f2ff',
@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
 
     valorTotal: {
         fontWeight:'bold',
-        fontSize: '50',
+        fontSize: 50,
         flexDirection:'row',
         justifyContent:'flex-end'
     },

@@ -17,7 +17,7 @@ const Tab = createBottomTabNavigator();
 function Tabs() {
   return (
   <Tab.Navigator
-  tabBarOptions={{
+  screenOptions={{
     activeTintColor: '#fff',
     tabStyle: {
       paddingBottom: 5,

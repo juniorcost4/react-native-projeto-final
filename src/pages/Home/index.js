@@ -12,7 +12,6 @@ export default function Home() {
 
     const chamadaAPI = async () => {
 
-        console.log('passou aqui')
         await Api.get("/produtos").then((response) => setProdutos(response.data));
 
     };
@@ -20,6 +19,12 @@ export default function Home() {
     React.useEffect(() => { chamadaAPI() }, [])
 
     const imageList = [
+        {
+            uri: 'https://images.pexels.com/photos/9311992/pexels-photo-9311992.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+        },
+        {
+            uri: 'https://images.pexels.com/photos/9311992/pexels-photo-9311992.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+        },
         {
             uri: 'https://images.pexels.com/photos/9311992/pexels-photo-9311992.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
         },
