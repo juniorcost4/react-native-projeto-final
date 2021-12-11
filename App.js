@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import Home from './src/pages/Home';
 import Login from './src/pages/Login';
@@ -7,9 +6,9 @@ import Cart from "./src/pages/Cart";
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import Ionicons from "react-native-vector-icons/Ionicons";
 import { ScrollView, SafeAreaView } from 'react-native';
-import { Entypo, Feather } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
+import AuthContext from './contexts/auth'
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -27,7 +26,7 @@ function Tabs() {
   return (
   <Tab.Navigator
   screenOptions={{
-    activeTintColor: '#fff',
+    activeTintColor: '#222',
     tabStyle: {
       paddingBottom: 5,
       paddingTop: 5,
@@ -39,14 +38,20 @@ function Tabs() {
   >
     <Tab.Screen name="Inicio"
     component={stackHome} 
-    options={{headerShown: false, tabBarIcon: ({size, color}) => (
+    options={{
+      headerShown: false,
+      title: "Home",
+      tabBarIcon: ({size, color}) => (
       <Entypo name="home" size={size} color={color} />
     )
   }} 
     />
     <Tab.Screen name="Cart"
     component={Cart}
-    options = {{headerShown: false , tabBarIcon:({size , color}) => (
+    options = {{
+      headerShown: false , 
+      title: 'Carrinho',
+      tabBarIcon:({size , color}) => (
       <Entypo name="shopping-cart" size={size} color={color} />
     )
     }}

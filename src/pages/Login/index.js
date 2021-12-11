@@ -8,6 +8,7 @@ import {
   TextButton,
 } from "./styles";
 import Header from "../../components/Header";
+import { mockLogin } from "../../../service/Auth"
 
 
 function Login({ navigation }) {
@@ -24,7 +25,8 @@ function Login({ navigation }) {
           placeholder="Senha"
           secureTextEntry
         />
-        <ButtonSubmit onPress={() => navigation.navigate('Tabs')}>
+        <ButtonSubmit onPress={() => navigation.navigate('Tabs')}> 
+        {/* mudar onPress para o mockLogin */}
           <TextButton>Entrar</TextButton>
         </ButtonSubmit>
       </Container>
