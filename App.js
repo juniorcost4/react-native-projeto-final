@@ -51,7 +51,7 @@ function Tabs() {
     />
     <Stack.Screen name="Cart"
     component={Cart}
-    options = {{headerShwo: false , tabBarIcon:({size , color}) => (
+    options = {{headerShown: false , tabBarIcon:({size , color}) => (
       <Entypo name="shopping-cart" size={size} color={color} />
     )
     }}
