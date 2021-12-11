@@ -20,6 +20,13 @@ export const styles = StyleSheet.create({
         fontWeight:'bold',
         fontSize: 15,
     },
+
+    produtoTitulo: {
+        fontSize: 22,
+        color: '#153730',
+        fontWeight:'bold',
+    },
+
     gradeProduto:{
         backgroundColor: '#e6f2ff',
         borderBottomWidth: 10,
@@ -36,10 +43,8 @@ export const styles = StyleSheet.create({
     },
 
     btFinalizarPedido: {
-
         flexDirection:'row',
         justifyContent:'flex-end',
-                
         alignItems: 'center',
         backgroundColor: '#DDDDDD',
         borderRadius: 10,
@@ -53,8 +58,16 @@ export const styles = StyleSheet.create({
         justifyContent:'center',
         fontSize: 12,
         fontWeight:'bold',
-        
-    }
+   },
+
+   gradeImagem: {
+       flex: 0.5,
+       width: '60%',
+       borderWidth: 3,
+       borderColor: 'black',
+       borderRadius: 10,
+       resizeMode:'contain',
+   },
 
 });
 
