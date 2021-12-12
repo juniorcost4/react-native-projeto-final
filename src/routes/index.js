@@ -59,7 +59,7 @@ function Tabs() {
 }
 const Routes = () => {
     return (
-            <Stack.Navigator initialRouteName="Login" >
+            <Stack.Navigator initialRouteName="Tabs" >
                 <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
                 <Stack.Screen name="Tabs" component={Tabs} options={{ headerShown: false }} />
             </Stack.Navigator>
