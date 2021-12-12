@@ -19,7 +19,7 @@ const navigation = useNavigation();
             <Text style={styles.price}>
                 R$ {props.produto.vlUnitario}0
             </Text>
-            <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('Detalhes', {id: props.produto.id})}>
+            <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('Detalhes', {id: props.produto.id, uri: props.foto.uri})}>
                 <Text>Ver detalhes</Text>
             </TouchableOpacity>
         </View>

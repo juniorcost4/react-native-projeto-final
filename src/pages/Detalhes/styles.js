@@ -8,10 +8,11 @@ export const styles = StyleSheet.create({
       borderWidth: 5,
     },
 
-    texto : {
+    texto: {
         fontSize: 30,
         color: 'white',
         backgroundColor: '#1E6658',
+        marginTop: 15,
     },
 
     bt: {

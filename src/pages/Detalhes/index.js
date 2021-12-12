@@ -10,10 +10,13 @@ export default function Detalhes({ route }) {
   const { add } = useCart()
 
   const { id } = route.params;
+  const { foto } = route.params;
   const [count, setCount] = useState(1);
   const [produto, setProduto] = useState({})
   const mais = () => setCount(prevCount => prevCount + 1);
   const menos = () => setCount(prevCount => prevCount - 1);
+
+  const fotoApi = route.params;
 
   function search() {
     Api.get(`produtos/${id}`).then(exibir)
@@ -34,12 +37,10 @@ export default function Detalhes({ route }) {
         <View style={{ alignSelf: 'center' }}>
 
           <View style={styles.espacoFotoProduto}>
-            <Text style={{ alignSelf: 'center', fontSize: 25, fontWeight: 'bold' }}>Gato Que Nem Parece Gato</Text>
-            <Image source={gato} style={styles.img} resizeMode="contain" />
-            <Text>Esse é um gato muito feio. De acordo com Joey de Friends,
-              isso nem é um gato!!!!
-              (Tadin do gato)
-            </Text>
+            <Text style={{ alignSelf: 'center', fontSize: 25, fontWeight: 'bold' }}>{produto.nome}</Text>
+            <Image source={fotoApi} style={styles.img} resizeMode="contain" />
+            <Text style={{ alignSelf: 'center', fontSize: 15, fontWeight: 'bold' }}>Descrição: {produto.descricao}</Text>
+            <Text style={{ alignSelf: 'center', fontSize: 14, fontWeight: 'bold' }}>Categoria: {produto.categoria}</Text>
           </View>
 
           <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
