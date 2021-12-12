@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from "react"
+import Api from "../service/Api"
 
 const CartContext = createContext()
 
@@ -6,15 +7,16 @@ export default function CartProvider({children}) {
 
     const [cart, setCart] = useState([])
     const [totalValue, setTotalValue] = useState(0)
+    const [qtd, setQtd] = useState(1)
 
     useEffect(() => {
         let value = 0
         cart.map((item) => {
-            value = value + item.value
+            value = value + item.vlUnitario
         })
 
         setTotalValue(value)
-    }, [])
+    }, [cart])
 
     function add(item) {
         const newCart = cart;
@@ -32,6 +34,8 @@ export default function CartProvider({children}) {
     const store = {
         add,
         cart,
+        qtd,
+        setQtd,
         totalValue,
         remove
     }
@@ -49,12 +53,16 @@ export function useCart() {
     const {
         cart,
         add,
+        qtd,
+        setQtd,
         totalValue,
         remove
     } = context
 
     return { cart,
              add,
+             qtd,
+             setQtd,
              totalValue,
              remove }
 }

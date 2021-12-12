@@ -3,16 +3,15 @@ import { TextInput, View, Text, TouchableOpacity, Image } from 'react-native';
 import { styles } from './styles';
 import Api from "../../../service/Api";
 import { useCart } from '../../../contexts/cart'
-import { useNavigation } from '@react-navigation/native';
 
 export default function Detalhes({ route, navigation }) {
 
-  const { add } = useCart()
+  const { add, qtd, setQtd } = useCart()
   const { id } = route.params;
-  const [count, setCount] = useState(1);
+  // const [count, setCount] = useState(1);
   const [produto, setProduto] = useState({})
-  const mais = () => setCount(prevCount => prevCount + 1);
-  const menos = () => setCount(prevCount => prevCount - 1);
+  const mais = () => setQtd(prevCount => prevCount + 1);
+  const menos = () => setQtd(prevCount => prevCount - 1);
   const fotoApi = route.params;
 
   function search() {
@@ -49,7 +48,7 @@ export default function Detalhes({ route, navigation }) {
             </TouchableOpacity>
 
             <View>
-              <Text style={styles.textoQt}>Quantidade: {count}</Text>
+              <Text style={styles.textoQt}>Quantidade: {qtd}</Text>
             </View>
 
             {/* BOTAO DE RETIRAR QUANTIDADE DO CARRINHO */}
@@ -62,7 +61,7 @@ export default function Detalhes({ route, navigation }) {
 
           <View>
             <Text style={{fontSize: 15, alignSelf: 'center'}}>Valor Unitário: {produto.vlUnitario}</Text>
-            <Text style={{fontSize: 18, alignSelf: 'center'}}>Total: {produto.vlUnitario * count}</Text>
+            <Text style={{fontSize: 18, alignSelf: 'center'}}>Total: {produto.vlUnitario * qtd}</Text>
 
           </View>
 
