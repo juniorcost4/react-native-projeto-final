@@ -27,7 +27,7 @@ export default function Cart() {
                         </>
                     )
                 }}
-                keyExtractor={new Date().getMilliseconds}/>
+                keyExtractor={(item) => item.id}/>
                 <Text>Valor total: {totalValue}</Text>
              </View>
     

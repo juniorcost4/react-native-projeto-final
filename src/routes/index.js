@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native'
 import { Entypo } from '@expo/vector-icons';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
@@ -18,6 +17,7 @@ function stackHome() {
         <Stack.Navigator>
             <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
             <Stack.Screen name="Detalhes" component={Detalhes} options={{ headerShown: false }} />
+            {/* <Stack.Screen name="Carrin" component={Cart} options={{ headerShown: false }} /> */}
         </Stack.Navigator>
     );
 }
@@ -61,12 +61,10 @@ function Tabs() {
 }
 const Routes = () => {
     return (
-        <NavigationContainer>
             <Stack.Navigator initialRouteName="Login" >
                 <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
                 <Stack.Screen name="Tabs" component={Tabs} options={{ headerShown: false }} />
             </Stack.Navigator>
-        </NavigationContainer>
     )
 }
 

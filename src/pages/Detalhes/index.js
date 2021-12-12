@@ -5,9 +5,7 @@ import Api from "../../../service/Api";
 import { useCart } from '../../../contexts/cart'
 import { useNavigation } from '@react-navigation/native';
 
-export default function Detalhes({ route }) {
-
-  const navigation = useNavigation();
+export default function Detalhes({ route, navigation }) {
 
   const { add } = useCart()
   const { id } = route.params;
@@ -70,7 +68,9 @@ export default function Detalhes({ route }) {
 
           <TouchableOpacity
             style={styles.btAdicionarCarrinho}
-            onPress={() => add (produto)}>
+            onPress={() => {
+              add(produto)
+              return navigation.navigate("Cart")}}>
             <Text style={styles.textoBt}>Adicionar ao carrinho</Text>
           </TouchableOpacity>
         </View>
