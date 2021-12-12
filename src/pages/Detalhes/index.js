@@ -63,6 +63,12 @@ export default function Detalhes({ route }) {
             </TouchableOpacity>
           </View>
 
+          <View>
+            <Text style={{fontSize: 15, alignSelf: 'center'}}>Valor Unitário: {produto.vlUnitario}</Text>
+            <Text style={{fontSize: 18, alignSelf: 'center'}}>Total: {produto.vlUnitario * count}</Text>
+
+          </View>
+
           <TouchableOpacity
             style={styles.btAdicionarCarrinho}
             onPress={() => add (produto)}>

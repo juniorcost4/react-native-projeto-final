@@ -24,8 +24,7 @@ export const styles = StyleSheet.create({
         width: 40,
         height: 28,
         padding: 2,
-        marginTop: 20,
-        marginBottom: 20
+        marginBottom: 15,
     },
 
     btAdicionarCarrinho: {
@@ -47,7 +46,6 @@ export const styles = StyleSheet.create({
 
     textoQt: {
         fontSize: 22,
-        marginTop: 20,
         marginRight: 40,
         marginLeft: 50,
     },
