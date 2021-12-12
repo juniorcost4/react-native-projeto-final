@@ -6,8 +6,6 @@ import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Detalhes from '../pages/Detalhes';
 import Cart from '../pages/Cart';
-import AuthRoutes from './authRoutes';
-import AppRoutes from './appRoutes';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();

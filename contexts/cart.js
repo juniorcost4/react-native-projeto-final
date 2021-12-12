@@ -12,7 +12,7 @@ export default function CartProvider({children}) {
     useEffect(() => {
         let value = 0
         cart.map((item) => {
-            value = value + item.vlUnitario
+            value = value + (item.vlUnitario * qtd)
         })
 
         setTotalValue(value)
