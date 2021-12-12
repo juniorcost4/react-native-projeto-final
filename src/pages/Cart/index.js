@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
 import { styles } from './styles';
 import { useCart } from "../../../contexts/cart"
-import { FlatList } from "react-native-web";
 export default function Cart() {
 
-    const { add, cart, totalValue } = useCart()
+    const { remove, cart, totalValue } = useCart()
 
     return (
     <View style={styles.container}>

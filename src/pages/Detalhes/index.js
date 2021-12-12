@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { TextInput, View, Text, TouchableOpacity, Image } from 'react-native';
 import { styles } from './styles';
-import gato from '../../../assets/gatofeio.png';
 import Api from "../../../service/Api";
 import { useCart } from '../../../contexts/cart'
+import { useNavigation } from '@react-navigation/native';
 
 export default function Detalhes({ route }) {
 
-  const { add } = useCart()
+  const navigation = useNavigation();
 
+  const { add } = useCart()
   const { id } = route.params;
-  const { foto } = route.params;
   const [count, setCount] = useState(1);
   const [produto, setProduto] = useState({})
   const mais = () => setCount(prevCount => prevCount + 1);
   const menos = () => setCount(prevCount => prevCount - 1);
-
   const fotoApi = route.params;
 
   function search() {

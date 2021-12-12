@@ -5,7 +5,7 @@ const CartContext = createContext()
 export default function CartProvider({children}) {
 
     const [cart, setCart] = useState([])
-    const [totalValue, setTotalValue] = useState()
+    const [totalValue, setTotalValue] = useState(0)
 
     useEffect(() => {
         let value = 0
@@ -14,16 +14,16 @@ export default function CartProvider({children}) {
         })
 
         setTotalValue(value)
-    })
+    }, [])
 
-    function add (item) {
+    function add(item) {
         const newCart = cart;
         newCart.push(item)
 
         setCart([...newCart])
     }
 
-    function remove (index) {
+    function remove(index) {
         let newCart = cart.filter((item, i) => i !== index)
 
         setCart([...newCart])
@@ -53,10 +53,8 @@ export function useCart() {
         remove
     } = context
 
-    return ([
-        cart,
-        add,
-        totalValue,
-        remove
-    ])
+    return { cart,
+             add,
+             totalValue,
+             remove }
 }
