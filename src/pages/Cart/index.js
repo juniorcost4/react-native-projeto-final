@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { styles } from './styles';
+import { useCart } from "../../../contexts/cart"
+import { FlatList } from "react-native-web";
 export default function Cart() {
+
+    const { add, cart, totalValue } = useCart()
 
     return (
     <View style={styles.container}>
@@ -12,11 +16,20 @@ export default function Cart() {
             </View>
 
             <View style={styles.gradeProduto}>
-                <Text style={styles.produtoTitulo}>Produto Nome</Text>
-                <Text style={styles.produtosTexto}>Descrição: </Text> 
-                <Text style={styles.produtosTexto}>Quantidade: </Text> 
-                <Text style={styles.produtosTexto}>Valor unitario: </Text>
-                <Text style={styles.produtosTexto}> Valor total: </Text>
+                <FlatList 
+                data={cart}
+                renderItem={({item}) => {
+                    return (
+                        <>
+                        <Text style={styles.produtoTitulo}>{item.nome}</Text>
+                        <Text style={styles.produtosTexto}>Descrição: {item.descricao}</Text> 
+                        <Text style={styles.produtosTexto}>Quantidade: </Text> 
+                        <Text style={styles.produtosTexto}>Valor unitario: {item.vlUnitario}</Text>  
+                        </>
+                    )
+                }}
+                keyExtractor={new Date().getMilliseconds}/>
+                <Text>Valor total: {totalValue}</Text>
              </View>
     
     </View>

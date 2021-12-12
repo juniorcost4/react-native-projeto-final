@@ -9,6 +9,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { ScrollView, SafeAreaView } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import AuthContext from './contexts/auth'
+import CartContext from './contexts/cart'
+import CartProvider from "./contexts/cart";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -61,7 +63,7 @@ function Tabs() {
 }
 export default function App() {  
   return (
-    <>
+    <CartProvider>
     <SafeAreaView style={{backgroundColor: '#45B39D'}} />
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Login" >
@@ -69,6 +71,6 @@ export default function App() {
           <Stack.Screen name="Tabs" component={Tabs} options={{headerShown: false}} />
         </Stack.Navigator>
       </NavigationContainer>
-    </> 
+    </CartProvider> 
   );
 }

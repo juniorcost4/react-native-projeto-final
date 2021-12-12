@@ -3,8 +3,11 @@ import { TextInput, View, Text, TouchableOpacity, Image } from 'react-native';
 import { styles } from './styles';
 import gato from '../../../assets/gatofeio.png';
 import Api from "../../../service/Api";
+import { useCart } from '../../../contexts/cart'
 
 export default function Detalhes({ route }) {
+
+  const { add } = useCart()
 
   const { id } = route.params;
   const [count, setCount] = useState(1);
@@ -60,7 +63,8 @@ export default function Detalhes({ route }) {
           </View>
 
           <TouchableOpacity
-            style={styles.btAdicionarCarrinho}>
+            style={styles.btAdicionarCarrinho}
+            onPress={() => add (produto)}>
             <Text style={styles.textoBt}>Adicionar ao carrinho</Text>
           </TouchableOpacity>
         </View>
