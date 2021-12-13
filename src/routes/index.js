@@ -1,12 +1,16 @@
 import React from 'react';
 import { Dimensions } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import { useAuthValue } from '../../src/contexts/auth';
+
 import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Detalhes from '../pages/Detalhes';
 import Cart from '../pages/Cart';
+import { useNavigation } from '@react-navigation/native';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -21,6 +25,11 @@ function stackHome() {
 }
 
 function Tabs() {
+
+    const navigation = useNavigation();
+    
+    const { login } = useAuthValue();
+
     return (
         <Tab.Navigator
         screenOptions={{
@@ -58,6 +67,13 @@ function Tabs() {
                     tabBarIcon: ({ size, color }) => (
                         <Entypo name="shopping-cart" size={size} color={color} />
                     )
+                }}
+                listeners={{
+                    tabPress: () => {
+                        if(!login) {
+                            return navigation.navigate("Login");
+                        }
+                    }
                 }}
             />
         </Tab.Navigator>

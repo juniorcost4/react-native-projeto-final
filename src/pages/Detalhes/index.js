@@ -3,12 +3,14 @@ import { TextInput, View, Text, TouchableOpacity, Image } from 'react-native';
 import { styles } from './styles';
 import Api from "../../service/Api";
 import { useCart } from '../../contexts/cart';
+import { useAuthValue } from "../../contexts/auth";
 
 export default function Detalhes({ route, navigation }) {
 
-  const { add, qtd, setQtd } = useCart()
+  const { add, qtd, setQtd } = useCart();
+  const { login } = useAuthValue();
+
   const { id } = route.params;
-  // const [count, setCount] = useState(1);
   const [produto, setProduto] = useState({})
   const mais = () => setQtd(prevCount => prevCount + 1);
   const menos = () => setQtd(prevCount => prevCount - 1);
@@ -68,8 +70,15 @@ export default function Detalhes({ route, navigation }) {
           <TouchableOpacity
             style={styles.btAdicionarCarrinho}
             onPress={() => {
-              add(produto)
-              return navigation.navigate("Cart")}}>
+              add(produto);
+              
+              if (login) {
+                return navigation.navigate("Cart");
+              }
+              
+              return navigation.navigate("Login");
+            }}
+            >
             <Text style={styles.textoBt}>Adicionar ao carrinho</Text>
           </TouchableOpacity>
         </View>
