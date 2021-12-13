@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
 export const styles = StyleSheet.create({
     container: {
@@ -6,15 +7,23 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         height: 70,
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-evenly',
+        marginTop: 14,
     },
     input: {
         borderWidth: 1,
         borderRadius: 10,
         borderColor: 'black',
-        width: 200,
         height: 30,
+        flex: 1,
+    },
+    searchImput: {
+        flexDirection: 'row',
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
         marginLeft: 10,
-        paddingLeft: 6
+        marginRight: 10,
+        height: 34,
     }
 })
