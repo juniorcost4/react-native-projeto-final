@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { TextInput, View, Text, TouchableOpacity, Image } from 'react-native';
 import { styles } from './styles';
-import Api from "../../../service/Api";
-import { useCart } from '../../../contexts/cart'
+import Api from "../../service/Api";
+import { useCart } from '../../contexts/cart';
 
 export default function Detalhes({ route, navigation }) {
 

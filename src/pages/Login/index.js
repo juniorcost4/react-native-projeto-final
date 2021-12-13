@@ -8,7 +8,7 @@ import {
   TextButton,
 } from "./styles";
 import Header from "../../components/Header";
-import { mockLogin } from "../../../service/Auth"
+import { mockLogin } from "../../service/Auth"
 
 
 function Login({ navigation }) {

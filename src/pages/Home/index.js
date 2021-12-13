@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, ScrollView, FlatList } from 'react-native';
 import { styles } from './styles'
 import Navbar from '../../components/Navbar';
-import Api from '../../../service/Api'
+import Api from '../../service/Api'
 import Produto from '../../components/Produto';
 
 

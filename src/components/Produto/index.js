@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, ScrollView, FlatList, Image, TouchableOpacity } from 'react-native';
-import { styles } from './styles'
-import Api from '../../../service/Api'
+import { styles } from './styles';
+import Api from '../../service/Api';
 import { ButtonSubmit } from '../../pages/Login/styles';
 import { useNavigation } from '@react-navigation/native';
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
 import { styles } from './styles';
-import { useCart } from "../../../contexts/cart"
+import { useCart } from "../../contexts/cart";
 export default function Cart() {
 
     const { remove, cart, totalValue, qtd } = useCart()
