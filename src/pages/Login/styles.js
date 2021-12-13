@@ -33,7 +33,7 @@ export const Input = styled.TextInput`
 `;
 
 export const ButtonSubmit = styled.TouchableOpacity`
-  background-color: #45B39D ;
+  background-color: #27AE60 ;
   border-radius: 9px;
   width: 90%;
   padding: 20px;

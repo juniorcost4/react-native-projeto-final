@@ -9,7 +9,7 @@ export default function App() {
   return (
     <CartProvider>
       <NavigationContainer>
-        <MyStatusBar backgroundColor="#266dae"/>
+        <MyStatusBar backgroundColor="#27AE60"/>
         <Routes />
       </NavigationContainer>
     </CartProvider>

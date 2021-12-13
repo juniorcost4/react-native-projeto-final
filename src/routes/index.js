@@ -1,4 +1,5 @@
 import React from 'react';
+import { Dimensions } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
@@ -15,7 +16,6 @@ function stackHome() {
         <Stack.Navigator>
             <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
             <Stack.Screen name="Detalhes" component={Detalhes} options={{ headerShown: false }} />
-            {/* <Stack.Screen name="Carrin" component={Cart} options={{ headerShown: false }} /> */}
         </Stack.Navigator>
     );
 }
@@ -23,16 +23,22 @@ function stackHome() {
 function Tabs() {
     return (
         <Tab.Navigator
-            screenOptions={{
-                activeTintColor: '#222',
-                tabStyle: {
-                    paddingBottom: 5,
-                    paddingTop: 5,
-                    backgroundColor: '#222',
-                    borderTopColor: 'transparent',
-                }
-
-            }}
+        screenOptions={{
+            tabBarStyle: { 
+                backgroundColor: '#F4F4F4',
+                height: Dimensions.get('window').height * 0.085, 
+            },
+            tabBarActiveTintColor: '#27AE60',
+            tabBarInactiveTintColor: '#808080',
+            labelStyle: {
+                marginBottom: 6,
+                padding: 0,
+                fontStyle: 'normal',
+                fontSize: 10,
+                lineHeight: 12
+            },
+          }}
+            initialRouteName="Home"
         >
             <Tab.Screen name="Inicio"
                 component={stackHome}
@@ -42,7 +48,7 @@ function Tabs() {
                     tabBarIcon: ({ size, color }) => (
                         <Entypo name="home" size={size} color={color} />
                     )
-                }}
+                }}                
             />
             <Tab.Screen name="Cart"
                 component={Cart}

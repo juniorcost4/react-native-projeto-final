@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
       backgroundColor: 'gainsboro'
     },
     text: {
-      color: '#45B39D',
+      color: '#27AE60',
       fontSize: 20,
       fontWeight: '700',
       marginVertical: 10

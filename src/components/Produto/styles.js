@@ -21,12 +21,12 @@ export const styles = StyleSheet.create({
     },
     price: {
         marginVertical: 10,
-        color: '#45B39D',
+        color: '#27AE60',
         fontWeight: '600',
         fontSize: 16,
     },
     btnSubmit: {
-        backgroundColor: '#45B39D',
+        backgroundColor: '#27AE60',
         borderRadius: 9,
         padding: 10,
         color: 'white'
