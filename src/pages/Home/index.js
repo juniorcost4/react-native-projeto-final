@@ -65,6 +65,17 @@ export default function Home() {
                         ))}                
                     />
                 </View>
+                <View style={styles.containerFlatlist}>
+                    <Text style={styles.text}>Produtos em promocao</Text>
+                    <FlatList 
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        data={listaProdutos}
+                        renderItem={() => listaProdutos.map((data, index) => (
+                            <Produto key={data.id} produto={data} foto={imageList[index]} />
+                        ))}                
+                    />
+                </View>
             </ScrollView>
         </>
     );
