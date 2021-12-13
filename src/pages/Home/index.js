@@ -4,7 +4,7 @@ import { styles } from './styles'
 import Navbar from '../../components/Navbar';
 import Api from '../../service/Api'
 import Produto from '../../components/Produto';
-
+import Carroussel from '../../components/Carroussel';
 
 export default function Home() {
 
@@ -50,19 +50,22 @@ export default function Home() {
     ]
     listaProdutos.uri = imageList[0];
     return (
-        <ScrollView style={styles.container}>
+        <>
             <Navbar/>
-            <View style={styles.containerFlatlist}>
-                <Text style={styles.text}>Produtos em destaque</Text>
-            <FlatList 
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                data={listaProdutos}
-                renderItem={() => listaProdutos.map((data, index) => (
-                    <Produto key={data.id} produto={data} foto={imageList[index]} />
-                ))}                
-            />
-            </View>
-        </ScrollView>
+            <ScrollView style={styles.container}>
+                <Carroussel />
+                <View style={styles.containerFlatlist}>
+                    <Text style={styles.text}>Produtos em destaque</Text>
+                    <FlatList 
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        data={listaProdutos}
+                        renderItem={() => listaProdutos.map((data, index) => (
+                            <Produto key={data.id} produto={data} foto={imageList[index]} />
+                        ))}                
+                    />
+                </View>
+            </ScrollView>
+        </>
     );
 }
