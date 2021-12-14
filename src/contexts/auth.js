@@ -6,6 +6,7 @@ export const AuthContext = createContext();
 export default AuthProvider = ({ children }) => {
 
     const [login, setLogin] = useState(null);
+    const [loginStorage, setLoginStorage] = useState(null);
 
     useEffect(async () => {
         const loginAuth = await AsyncStorage.getItem('@login_auth');
@@ -14,7 +15,7 @@ export default AuthProvider = ({ children }) => {
         if (loginAuth) {
             setLogin(JSON.parse(loginAuth));
         }
-    }, []);
+    }, [loginStorage]);
 
     const handleLogin = async ({ loginUsuario, senhaUsuario }) => {
         const data = { login: loginUsuario, senha: senhaUsuario };
@@ -22,6 +23,7 @@ export default AuthProvider = ({ children }) => {
         console.log(data);
         const login = JSON.stringify(data);
 
+        setLoginStorage(login);
         await AsyncStorage.setItem('@login_auth', login);
     }
 

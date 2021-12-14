@@ -68,7 +68,7 @@ export default function Home() {
                     />
                 </View>
                 <View style={styles.containerFlatlist}>
-                    <Text style={styles.text}>Produtos em promocao</Text>
+                    <Text style={styles.text}>Produtos em promoção</Text>
                     <FlatList 
                         horizontal
                         showsHorizontalScrollIndicator={false}

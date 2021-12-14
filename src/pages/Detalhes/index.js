@@ -4,7 +4,7 @@ import { styles } from './styles';
 import Api from "../../service/Api";
 import { useCart } from '../../contexts/cart';
 import { useAuthValue } from "../../contexts/auth";
-import { AntDesign } from '@expo/vector-icons'; 
+import { AntDesign } from '@expo/vector-icons';
 
 export default function Detalhes({ route, navigation }) {
 
@@ -46,7 +46,7 @@ export default function Detalhes({ route, navigation }) {
           </View>
 
           <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
-            
+
             <TouchableOpacity
               style={styles.bt}
               onPress={menos}>
@@ -60,13 +60,13 @@ export default function Detalhes({ route, navigation }) {
             <TouchableOpacity
               style={styles.bt}
               onPress={mais}>
-       		    <AntDesign name="pluscircleo" size={24} color="black" />
+              <AntDesign name="pluscircleo" size={24} color="black" />
             </TouchableOpacity>
           </View>
 
           <View>
-            <Text style={{fontSize: 15, alignSelf: 'center'}}>Valor Unitário: {produto.vlUnitario}</Text>
-            <Text style={{fontSize: 18, alignSelf: 'center'}}>Total: {produto.vlUnitario * qtd}</Text>
+            <Text style={{ fontSize: 15, alignSelf: 'center' }}>Valor Unitário: {produto.vlUnitario}</Text>
+            <Text style={{ fontSize: 18, alignSelf: 'center' }}>Total: {produto.vlUnitario * qtd}</Text>
 
           </View>
 
@@ -83,19 +83,18 @@ export default function Detalhes({ route, navigation }) {
                 imageUrl: fotoApi,
               }
               add(newProduct);
-              
+
               if (login) {
                 return navigation.navigate("Cart");
               } else {
                 return navigation.navigate("Login")
               };
             }}
-            >
+          >
             <Text style={styles.textoBt}>Adicionar ao carrinho</Text>
           </TouchableOpacity>
         </View>
       </View>
     </View>
-
   );
 }

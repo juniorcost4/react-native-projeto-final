@@ -37,7 +37,7 @@ function Login({ navigation, route }) {
         />
         <ButtonSubmit onPress={() => {
           if (email !== signIn || senha !== password) {
-            navigation.navigate('Login');
+            return;
           } else {
             navigation.navigate('Tabs');
           }

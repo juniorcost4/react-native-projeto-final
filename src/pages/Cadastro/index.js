@@ -17,7 +17,7 @@ function Cadastro({ navigation }) {
 
   const [email, setEmail] = useState("exemplo");
   const [senha, setSenha] = useState("123");
-  const [confirmSenha, setConfirmSenha] = useState("123")
+  const [confirmSenha, setConfirmSenha] = useState("123");
 
   return (
     <KeyboardView>
@@ -46,12 +46,12 @@ function Cadastro({ navigation }) {
           onChangeText={text => setConfirmSenha(text)}
         />
         <ButtonSubmit onPress={async () => {
-          await handleLogin({ loginUsuario: email, senhaUsuario: senha});
           if (email === "" || senha === "") {
-            navigation.navigate('Cadastro')
+            return;
           } else if (senha !== confirmSenha) {
-            navigation.navigate('Cadastro')
+            return;
           }else {
+            await handleLogin({ loginUsuario: email, senhaUsuario: senha});
             navigation.navigate('Login', {signIn: email, password: senha});
           }
         }}> 

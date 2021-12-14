@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Text, View, ScrollView, FlatList, Image, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 import Api from '../../service/Api';
 import { ButtonSubmit } from '../../pages/Login/styles';
@@ -7,22 +7,24 @@ import { useNavigation } from '@react-navigation/native';
 
 export default function Produto(props) {
 
-const navigation = useNavigation();
+    const navigation = useNavigation();
 
     return (
         <View style={styles.container}>
-        <View style={styles.cardProduto}>
-            <Text style={styles.text}>
-                {props.produto.nome}
-            </Text>
-            <Image source={{uri: `${props?.foto?.uri}`}} style={styles.img}/>
-            <Text style={styles.price}>
-                R$ {props.produto.vlUnitario}0
-            </Text>
-            <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('Detalhes', {id: props.produto.id, uri: props.foto.uri})}>
-                <Text style={{color: 'white', fontWeight: '600'}}>Ver detalhes</Text>
-            </TouchableOpacity>
-        </View>
+            <View style={styles.cardProduto}>
+                <Text style={styles.text}>
+                    {props.produto.nome}
+                </Text>
+                <Image source={{ uri: `${props?.foto?.uri}` }} style={styles.img} />
+                <Text style={styles.price}>
+                    R$ {props.produto.vlUnitario}
+                </Text>
+                <TouchableOpacity
+                    style={styles.btnSubmit}
+                    onPress={() => navigation.navigate('Detalhes', { id: props.produto.id, uri: props.foto.uri })}>
+                    <Text style={{ color: 'white', fontWeight: '600' }}>Ver detalhes</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     );
 }
