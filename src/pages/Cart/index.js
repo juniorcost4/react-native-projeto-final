@@ -37,8 +37,19 @@ export default function Cart() {
                     )
                 }}
                 keyExtractor={(item) => item.id} /*problema de key por causa de qtd*//> 
-                <Text style={{fontSize: 18, color: 'blue'}}>Valor total da compra: R$ {totalValue}</Text>
+                
              </View>
+                    <View>
+                    <   Text style={{fontSize: 20, color: 'blue'}}>Valor total da compra: R$ {totalValue}</Text>
+                    </View>
+                    
+                    <View style={{justifyContent:'flex-end'}}>
+                 
+                        <TouchableOpacity style={{borderWidth: 2 , width: '45%' , borderRadius: 6}}>
+                             <Text style={{fontSize: 18 , padding: 8}}>Finalizar compra</Text>
+                        </TouchableOpacity>
+                    </View>
+
     
     </View>
     

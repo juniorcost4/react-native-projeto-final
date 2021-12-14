@@ -4,6 +4,7 @@ import { styles } from './styles';
 import Api from "../../service/Api";
 import { useCart } from '../../contexts/cart';
 import { useAuthValue } from "../../contexts/auth";
+import { AntDesign } from '@expo/vector-icons'; 
 
 export default function Detalhes({ route, navigation }) {
 
@@ -45,10 +46,11 @@ export default function Detalhes({ route, navigation }) {
           </View>
 
           <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
+            
             <TouchableOpacity
               style={styles.bt}
               onPress={menos}>
-              <Text>-</Text>
+              <AntDesign name="minuscircleo" size={24} color="black" />
             </TouchableOpacity>
 
             <View>
@@ -58,7 +60,7 @@ export default function Detalhes({ route, navigation }) {
             <TouchableOpacity
               style={styles.bt}
               onPress={mais}>
-              <Text>+</Text>
+       		    <AntDesign name="pluscircleo" size={24} color="black" />
             </TouchableOpacity>
           </View>
 
