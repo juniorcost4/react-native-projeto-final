@@ -20,7 +20,6 @@ export default AuthProvider = ({ children }) => {
         const data = { login: loginUsuario, senha: senhaUsuario };
 
         console.log(data);
-
         const login = JSON.stringify(data);
 
         await AsyncStorage.setItem('@login_auth', login);

@@ -30,7 +30,7 @@ export default function Navbar() {
             <View>
                 <TouchableOpacity onPress={() => {
                     console.log("entrar");
-                    navigation.navigate('Login');
+                    navigation.navigate('Cadastro');
                 }}>
                     < Ionicons name="enter-outline" size={28} style={{ marginRight: 10 }}/>
                 </TouchableOpacity> 

@@ -9,11 +9,12 @@ import {
 } from "./styles";
 import Header from "../../components/Header";
 import { useAuthValue } from "../../contexts/auth";
+import { Text, TouchableOpacity } from "react-native";
 
-
-function Login({ navigation }) {
+function Login({ navigation, route }) {
   const { handleLogin } = useAuthValue();
-
+  const signIn = route.params?.signIn;
+  const password = route.params?.password;
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
@@ -23,25 +24,35 @@ function Login({ navigation }) {
 
       <Container>
         <Title>Login</Title>
-        <Input 
+        <Input
           placeholderTextColor="#fff"
-          placeholder="E-mail" 
+          placeholder="E-mail"
           value={email}
           onChangeText={text => setEmail(text)}
         />
         <Input
-          placeholderTextColor="#fff" 
+          placeholderTextColor="#fff"
           placeholder="Senha"
           secureTextEntry
           value={senha}
           onChangeText={text => setSenha(text)}
         />
-        <ButtonSubmit onPress={async () => {
-          await handleLogin({ loginUsuario: email, senhaUsuario: senha});
-          navigation.navigate('Tabs');
-        }}> 
+        <ButtonSubmit onPress={() => {
+          if (email !== signIn || senha !== password) {
+            navigation.navigate('Login');
+          } else {
+            navigation.navigate('Tabs');
+          }
+        }}>
           <TextButton>Entrar</TextButton>
         </ButtonSubmit>
+        <TouchableOpacity
+          style={{ marginVertical: 15 }}
+          onPress={() => navigation.navigate('Cadastro')}>
+          <TextButton style={{ marginTop: 30, fontSize: 15, textDecorationLine: 'underline' }}>
+            Ainda não é usuário?
+          </TextButton>
+        </TouchableOpacity>
       </Container>
     </KeyboardView>
   );

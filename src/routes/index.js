@@ -10,6 +10,7 @@ import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Detalhes from '../pages/Detalhes';
 import Cart from '../pages/Cart';
+import Cadastro from '../pages/Cadastro'
 import { useNavigation } from '@react-navigation/native';
 
 const Stack = createNativeStackNavigator();
@@ -83,6 +84,7 @@ const Routes = () => {
     return (
             <Stack.Navigator initialRouteName="Tabs" >
                 <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+                <Stack.Screen name="Cadastro" component={Cadastro} options={{ headerShown: false }} />
                 <Stack.Screen name="Tabs" component={Tabs} options={{ headerShown: false }} />
             </Stack.Navigator>
     )
