@@ -8,11 +8,9 @@ import {
   TextButton,
 } from "./styles";
 import Header from "../../components/Header";
-import { useAuthValue } from "../../contexts/auth";
 import { Text, TouchableOpacity } from "react-native";
 
 function Login({ navigation, route }) {
-  const { handleLogin } = useAuthValue();
   const signIn = route.params?.signIn;
   const password = route.params?.password;
   const [email, setEmail] = useState("");
