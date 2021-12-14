@@ -5,14 +5,13 @@ export const styles = StyleSheet.create({
     container: {
       flex: 1,
       borderColor: '#27AE60',
-      borderRadius: 10,
       borderWidth: 5,
     },
 
     texto : {
         fontSize: 30,
         color: 'white',
-        backgroundColor: '#1E6658',
+        backgroundColor: '#27AE60',
     } ,
 
     produtosTexto: {
