@@ -32,7 +32,8 @@ export const styles = StyleSheet.create({
         borderBottomWidth: 10,
         borderBottomRightRadius: 25,
         borderColor:'#cce6ff',
-        marginTop: 30,
+        marginBottom: 65,
+        marginTop: 5,
     },
 
     valorTotal: {
@@ -68,6 +69,12 @@ export const styles = StyleSheet.create({
        borderRadius: 10,
        resizeMode:'contain',
    },
+
+   textoBt: {
+       fontSize: 18, 
+       color: 'red',
+       alignSelf: 'center',
+   }
 
 });
 

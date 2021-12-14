@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
     container: {
       flex: 1,
       borderColor: '#27AE60',
-      borderRadius: 10,
+      borderRadius: 3,
       borderWidth: 5,
     },
 
@@ -12,7 +12,6 @@ export const styles = StyleSheet.create({
         fontSize: 30,
         color: 'white',
         backgroundColor: '#1E6658',
-        marginTop: 15,
     },
 
     bt: {
@@ -51,7 +50,7 @@ export const styles = StyleSheet.create({
     },
 
     espacoFotoProduto: {
-        margin: 10,
+        margin: 5,
     },
 
     img: {

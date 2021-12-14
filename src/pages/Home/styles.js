@@ -7,12 +7,13 @@ export const styles = StyleSheet.create({
       paddingLeft: 10,
     },
     containerFlatlist: {
-      backgroundColor: 'gainsboro'
+      backgroundColor: 'gainsboro',
     },
     text: {
       color: '#27AE60',
       fontSize: 20,
       fontWeight: '700',
-      marginVertical: 10
-    }
+      marginVertical: 10,
+    },
+  
   });
