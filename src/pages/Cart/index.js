@@ -27,7 +27,7 @@ export default function Cart() {
                         </>
                     )
                 }}
-                keyExtractor={(item) => item.id}/>
+                keyExtractor={(item) => item.id} /*problema de key por causa de qtd*//> 
                 <Text>Valor total da compra: R$ {totalValue}</Text>
              </View>
     

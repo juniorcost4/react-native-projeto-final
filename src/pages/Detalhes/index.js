@@ -17,11 +17,7 @@ export default function Detalhes({ route, navigation }) {
   const fotoApi = route.params;
 
   function search() {
-    Api.get(`produtos/${id}`).then(exibir)
-  }
-
-  function exibir(response) {
-    setProduto(response.data)
+    Api.get(`produtos/${id}`).then((response) => setProduto(response.data))
   }
 
   useEffect(() => search(), []);
@@ -42,7 +38,6 @@ export default function Detalhes({ route, navigation }) {
           </View>
 
           <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
-            {/* BOTAO DE ADICIONAR QUANTIDADE AO CARRINHO*/}
             <TouchableOpacity
               style={styles.bt}
               onPress={menos}>
@@ -53,7 +48,6 @@ export default function Detalhes({ route, navigation }) {
               <Text style={styles.textoQt}>Quantidade: {qtd}</Text>
             </View>
 
-            {/* BOTAO DE RETIRAR QUANTIDADE DO CARRINHO */}
             <TouchableOpacity
               style={styles.bt}
               onPress={mais}>
@@ -74,9 +68,9 @@ export default function Detalhes({ route, navigation }) {
               
               if (login) {
                 return navigation.navigate("Cart");
-              }
-              
-              return navigation.navigate("Login");
+              } else {
+                return navigation.navigate("Login")
+              };
             }}
             >
             <Text style={styles.textoBt}>Adicionar ao carrinho</Text>
