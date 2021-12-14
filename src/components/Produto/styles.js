@@ -29,7 +29,8 @@ export const styles = StyleSheet.create({
         backgroundColor: '#27AE60',
         borderRadius: 9,
         padding: 10,
-        color: 'white'
+        color: 'white',
+        alignItems: 'center'
     },
     img: {
         height: 120, 

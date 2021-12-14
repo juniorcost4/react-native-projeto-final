@@ -31,10 +31,19 @@ export default function CartProvider({children}) {
         setCart(newCart);
     }
 
-    function remove(index) {
-        let newCart = cart.filter((item, i) => i !== index)
+    function remove(item) {
+        const newCart = [...cart];
+        const idProduto = item.id;
 
-        setCart([...newCart])
+        const productExists = newCart.find(product => product.id === idProduto);
+
+        if (productExists && productExists.qtd > 1) {
+            productExists.qtd -= 1;           
+        }else {  
+            newCart.splice(newCart.indexOf(item, 1));
+        }
+
+        setCart(newCart);
     }
 
     const store = {
