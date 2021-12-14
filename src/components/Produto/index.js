@@ -3,6 +3,7 @@ import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 import Api from '../../service/Api';
 import { ButtonSubmit } from '../../pages/Login/styles';
+import { Ionicons } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native';
 
 export default function Produto(props) {
@@ -17,7 +18,7 @@ export default function Produto(props) {
                 </Text>
                 <Image source={{ uri: `${props?.foto?.uri}` }} style={styles.img} />
                 <Text style={styles.price}>
-                    R$ {props.produto.vlUnitario}
+                < Ionicons name="logo-bitcoin" size={18}/> {props.produto.vlUnitario}
                 </Text>
                 <TouchableOpacity
                     style={styles.btnSubmit}

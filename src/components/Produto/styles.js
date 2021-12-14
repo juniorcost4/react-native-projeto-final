@@ -17,10 +17,11 @@ export const styles = StyleSheet.create({
     },
     text: {
         color: 'black',
-        marginVertical: 10
+        marginVertical: 10,
+        alignSelf: 'center'
     },
     price: {
-        marginVertical: 10,
+        marginVertical: 15,
         color: '#27AE60',
         fontWeight: '600',
         fontSize: 16,

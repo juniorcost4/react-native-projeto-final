@@ -11,12 +11,12 @@ export const styles = StyleSheet.create({
     texto: {
         fontSize: 30,
         color: 'white',
-        backgroundColor: '#1E6658',
+        backgroundColor: '#27AE60',
     },
 
     bt: {
         alignItems: 'center',
-        backgroundColor: '#DDDDDD',
+        backgroundColor: '#27AE60',
         borderRadius: 10,
         borderWidth: 1,
         borderColor:'black',
@@ -27,18 +27,16 @@ export const styles = StyleSheet.create({
     },
 
     btAdicionarCarrinho: {
+        backgroundColor: '#27AE60',
+        borderRadius: 9,
+        padding: 10,
+        color: 'white',
         alignItems: 'center',
-        backgroundColor: '#DDDDDD',
-        borderRadius: 10,
-        borderWidth: 1,
-        borderColor:'black',
-        width: 230,
-        height: 40,
-        marginLeft: 52.5,
+        marginVertical: 15,
     },
 
     textoBt:{
-        color: 'red',
+        color: 'white',
         fontSize: 22,
         fontWeight: "bold",
     },

@@ -5,6 +5,7 @@ import Api from "../../service/Api";
 import { useCart } from '../../contexts/cart';
 import { useAuthValue } from "../../contexts/auth";
 import { AntDesign } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons'
 
 export default function Detalhes({ route, navigation }) {
 
@@ -45,7 +46,7 @@ export default function Detalhes({ route, navigation }) {
             <Text style={{ alignSelf: 'center', fontSize: 14, fontWeight: 'bold' }}>Categoria: {produto.categoria}</Text>
           </View>
 
-          <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
+          <View style={{ flexDirection: 'row', alignSelf: 'center', marginVertical: 10 }}>
 
             <TouchableOpacity
               style={styles.bt}
@@ -64,9 +65,9 @@ export default function Detalhes({ route, navigation }) {
             </TouchableOpacity>
           </View>
 
-          <View>
-            <Text style={{ fontSize: 15, alignSelf: 'center' }}>Valor Unitário: {produto.vlUnitario}</Text>
-            <Text style={{ fontSize: 18, alignSelf: 'center' }}>Total: {produto.vlUnitario * qtd}</Text>
+          <View style={{marginVertical: 10}}>
+            <Text style={{ fontSize: 15, alignSelf: 'center' }}>Valor unitário: < Ionicons name="logo-bitcoin" size={18}/> {produto.vlUnitario} </Text>
+            <Text style={{ fontSize: 18, alignSelf: 'center', marginTop: 5 }}>Total: < Ionicons name="logo-bitcoin" size={18}/> {produto.vlUnitario * qtd}</Text>
 
           </View>
 

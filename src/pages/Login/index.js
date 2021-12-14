@@ -8,7 +8,7 @@ import {
   TextButton,
 } from "./styles";
 import Header from "../../components/Header";
-import { Text, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
 
 function Login({ navigation, route }) {
   const signIn = route.params?.signIn;
