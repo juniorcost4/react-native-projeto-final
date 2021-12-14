@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, FlatList, Image } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, FlatList, Image , ScrollView} from 'react-native';
 import { styles } from './styles';
 import { useCart } from "../../contexts/cart";
 export default function Cart() {
@@ -7,6 +7,7 @@ export default function Cart() {
     const { remove, cart, totalValue } = useCart()
 
     return (
+        <ScrollView> 
     <View style={styles.container}>
         <Text style={styles.texto}>Seu carrinho de compras</Text>
             {/* <View style={styles.gradeImagem}> 
@@ -45,13 +46,16 @@ export default function Cart() {
                     
                     <View style={{justifyContent:'flex-end'}}>
                  
-                        <TouchableOpacity style={{borderWidth: 2 , width: '45%' , borderRadius: 6}}>
-                             <Text style={{fontSize: 18 , padding: 8}}>Finalizar compra</Text>
+                    <TouchableOpacity style={{borderWidth: 2 , width: '45%' , borderRadius: 6 , backgroundColor:'#0000ff'}}
+                            onPress={() => {
+                                alert("Pedido Finalizado")}}>
+                            <Text style={{fontSize: 18 , padding: 8 , color: 'white'}}>Finalizar compra</Text>
                         </TouchableOpacity>
                     </View>
 
     
     </View>
+    </ScrollView>
     
     );
 }
