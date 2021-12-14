@@ -7,22 +7,28 @@ export default function CartProvider({children}) {
 
     const [cart, setCart] = useState([])
     const [totalValue, setTotalValue] = useState(0)
-    const [qtd, setQtd] = useState(1)
 
     useEffect(() => {
         let value = 0
         cart.map((item) => {
-            value = value + (item.vlUnitario * qtd)
+            value = value + (item.valorUnitario * item.qtd)
         })
-
         setTotalValue(value)
     }, [cart])
 
     function add(item) {
-        const newCart = cart;
-        newCart.push(item)
+        const newCart = [...cart];
+        const idProduto = item.id;
 
-        setCart([...newCart])
+        const productExists = newCart.find(product => product.id === idProduto);
+
+        if (productExists) {
+            productExists.qtd += item.qtd;           
+        }else {  
+            newCart.push(item);
+        }
+
+        setCart(newCart);
     }
 
     function remove(index) {
@@ -34,8 +40,6 @@ export default function CartProvider({children}) {
     const store = {
         add,
         cart,
-        qtd,
-        setQtd,
         totalValue,
         remove
     }
@@ -53,16 +57,12 @@ export function useCart() {
     const {
         cart,
         add,
-        qtd,
-        setQtd,
         totalValue,
         remove
     } = context
 
     return { cart,
              add,
-             qtd,
-             setQtd,
              totalValue,
              remove }
 }

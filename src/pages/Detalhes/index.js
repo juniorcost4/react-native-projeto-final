@@ -7,13 +7,20 @@ import { useAuthValue } from "../../contexts/auth";
 
 export default function Detalhes({ route, navigation }) {
 
-  const { add, qtd, setQtd } = useCart();
+  const { add } = useCart();
   const { login } = useAuthValue();
 
   const { id } = route.params;
   const [produto, setProduto] = useState({})
+  const [qtd, setQtd] = useState(1)
   const mais = () => setQtd(prevCount => prevCount + 1);
-  const menos = () => setQtd(prevCount => prevCount - 1);
+  const menos = () => setQtd(prevCount => {
+    if (prevCount > 0) {
+      return prevCount - 1;
+    } else {
+      return prevCount;
+    }
+  });
   const fotoApi = route.params;
 
   function search() {
@@ -64,7 +71,16 @@ export default function Detalhes({ route, navigation }) {
           <TouchableOpacity
             style={styles.btAdicionarCarrinho}
             onPress={() => {
-              add(produto);
+              const newProduct = {
+                id: produto.id,
+                nome: produto.nome,
+                descricao: produto.descricao,
+                valorUnitario: produto.vlUnitario,
+                qtd: qtd,
+                valorTotalItem: produto.vlUnitario * qtd,
+                imageUrl: fotoApi,
+              }
+              add(newProduct);
               
               if (login) {
                 return navigation.navigate("Cart");
