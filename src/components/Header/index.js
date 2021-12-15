@@ -1,7 +1,7 @@
 import React from "react";
 import { Image } from "react-native";
 import { Container } from "./styles";
-//import Logo from "../../../assets/logo-smart-fit.png";
+//import Logo from "../../../assets/";
 
 function Header() {
   return (
