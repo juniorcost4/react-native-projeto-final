@@ -26,28 +26,37 @@ function Login({ navigation, route }) {
           placeholderTextColor="#fff"
           placeholder="E-mail"
           value={email}
-          onChangeText={text => setEmail(text)}
+          onChangeText={(text) => setEmail(text)}
         />
         <Input
           placeholderTextColor="#fff"
           placeholder="Senha"
           secureTextEntry
           value={senha}
-          onChangeText={text => setSenha(text)}
+          onChangeText={(text) => setSenha(text)}
         />
-        <ButtonSubmit onPress={() => {
-          if (email !== signIn || senha !== password) {
-            return;
-          } else {
-            navigation.navigate('Tabs');
-          }
-        }}>
+        <ButtonSubmit
+          onPress={() => {
+            if (email !== signIn || senha !== password) {
+              return;
+            } else {
+              navigation.navigate("Tabs");
+            }
+          }}
+        >
           <TextButton>Entrar</TextButton>
         </ButtonSubmit>
         <TouchableOpacity
           style={{ marginVertical: 15 }}
-          onPress={() => navigation.navigate('Cadastro')}>
-          <TextButton style={{ marginTop: 30, fontSize: 15, textDecorationLine: 'underline' }}>
+          onPress={() => navigation.navigate("Cadastro")}
+        >
+          <TextButton
+            style={{
+              marginTop: 30,
+              fontSize: 15,
+              textDecorationLine: "underline",
+            }}
+          >
             Ainda não é usuário?
           </TextButton>
         </TouchableOpacity>
@@ -56,4 +65,4 @@ function Login({ navigation, route }) {
   );
 }
 
-export default Login;
+export default Login; 
